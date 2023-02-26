@@ -1,0 +1,54 @@
+TODO BLOC
+=========
+1. Feature creation Todo.
+2. Delete old TodoBloc. []
+3. Create a new BLOC []
+4. We define State
+        - initial
+        - loading
+        - loaded
+        - error
+    []
+5. We define Event
+        - onAdd()
+        - onDelete()
+        - onAddItem( {required String item} )
+    []!
+6. Initialise Bloc
+        - initial value
+        - on<TodoEventAdd>
+            - emit Loading 
+            - emit Loaded
+        - on<TodoEventDelete>
+        - on<TodoEventAddItem>
+            - emit Loading 
+            - emit Loaded(items <State>)
+7. UI
+        - BlocBuilder Wrap
+            - if(state is TodoStateInitial)
+                - Initial UI
+            - elseif(state is TodoStateLoading)
+                - CircularProgressIndicator
+            - elseif(state is TodoStateLoaded)
+                - Loaded UI **
+            - else
+                - Error
+        - Functions
+            - context.read< TodoBloc >().add( TodoEvent.onAdd() )
+            - context.read< TodoBloc >().add( TodoEvent.onDelete() )
+            if I want to send something to Bloc
+            - context.read< TodoBloc >().add( TodoEvent.onAddItem( item: "I am going to be send to BLOC" ) )
+8. Update BLOC
+        - on<TodoEventAddItem>
+                - oldState
+                    if(state is TodoLoadedState)
+                        oldState = (state as TodoLoadedState).items;
+                - newValue = event.item
+
+                - emit Loading 
+                - emit Loaded
+                        items: [newItem , ...oldState]
+
+
+                    
+

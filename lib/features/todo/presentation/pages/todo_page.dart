@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:monastery_app/features/todo/data/models/todo_model.dart';
@@ -12,6 +14,10 @@ class TodoPage extends StatefulWidget {
 }
 
 class _TodoPageState extends State<TodoPage> {
+  int random(int min, int max) {
+    return min + Random().nextInt(max - min);
+  }
+
   TextEditingController textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -64,9 +70,10 @@ class _TodoPageState extends State<TodoPage> {
           children: [
             IconButton(
                 onPressed: () {
-                  context
-                      .read<TodoBloc>()
-                      .add(TodoEvent.onAdd(item: textEditingController.text));
+                  context.read<TodoBloc>().add(TodoEvent.onAdd(
+                      item: TodoModel(
+                          id: random(1, 100),
+                          title: textEditingController.text)));
                 },
                 icon: const Icon(Icons.add)),
             IconButton(onPressed: () {}, icon: const Icon(Icons.remove)),

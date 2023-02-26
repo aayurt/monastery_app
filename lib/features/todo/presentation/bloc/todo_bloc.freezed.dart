@@ -18,19 +18,19 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$TodoEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String item) onAdd,
+    required TResult Function(TodoModel item) onAdd,
     required TResult Function() onDelete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String item)? onAdd,
+    TResult? Function(TodoModel item)? onAdd,
     TResult? Function()? onDelete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String item)? onAdd,
+    TResult Function(TodoModel item)? onAdd,
     TResult Function()? onDelete,
     required TResult orElse(),
   }) =>
@@ -79,7 +79,7 @@ abstract class _$$TodoEventOnAddCopyWith<$Res> {
           _$TodoEventOnAdd value, $Res Function(_$TodoEventOnAdd) then) =
       __$$TodoEventOnAddCopyWithImpl<$Res>;
   @useResult
-  $Res call({String item});
+  $Res call({TodoModel item});
 }
 
 /// @nodoc
@@ -99,7 +99,7 @@ class __$$TodoEventOnAddCopyWithImpl<$Res>
       item: null == item
           ? _value.item
           : item // ignore: cast_nullable_to_non_nullable
-              as String,
+              as TodoModel,
     ));
   }
 }
@@ -110,7 +110,7 @@ class _$TodoEventOnAdd implements TodoEventOnAdd {
   const _$TodoEventOnAdd({required this.item});
 
   @override
-  final String item;
+  final TodoModel item;
 
   @override
   String toString() {
@@ -137,7 +137,7 @@ class _$TodoEventOnAdd implements TodoEventOnAdd {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String item) onAdd,
+    required TResult Function(TodoModel item) onAdd,
     required TResult Function() onDelete,
   }) {
     return onAdd(item);
@@ -146,7 +146,7 @@ class _$TodoEventOnAdd implements TodoEventOnAdd {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String item)? onAdd,
+    TResult? Function(TodoModel item)? onAdd,
     TResult? Function()? onDelete,
   }) {
     return onAdd?.call(item);
@@ -155,7 +155,7 @@ class _$TodoEventOnAdd implements TodoEventOnAdd {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String item)? onAdd,
+    TResult Function(TodoModel item)? onAdd,
     TResult Function()? onDelete,
     required TResult orElse(),
   }) {
@@ -198,9 +198,10 @@ class _$TodoEventOnAdd implements TodoEventOnAdd {
 }
 
 abstract class TodoEventOnAdd implements TodoEvent {
-  const factory TodoEventOnAdd({required final String item}) = _$TodoEventOnAdd;
+  const factory TodoEventOnAdd({required final TodoModel item}) =
+      _$TodoEventOnAdd;
 
-  String get item;
+  TodoModel get item;
   @JsonKey(ignore: true)
   _$$TodoEventOnAddCopyWith<_$TodoEventOnAdd> get copyWith =>
       throw _privateConstructorUsedError;
@@ -244,7 +245,7 @@ class _$TodoEventOnDelete implements TodoEventOnDelete {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String item) onAdd,
+    required TResult Function(TodoModel item) onAdd,
     required TResult Function() onDelete,
   }) {
     return onDelete();
@@ -253,7 +254,7 @@ class _$TodoEventOnDelete implements TodoEventOnDelete {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String item)? onAdd,
+    TResult? Function(TodoModel item)? onAdd,
     TResult? Function()? onDelete,
   }) {
     return onDelete?.call();
@@ -262,7 +263,7 @@ class _$TodoEventOnDelete implements TodoEventOnDelete {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String item)? onAdd,
+    TResult Function(TodoModel item)? onAdd,
     TResult Function()? onDelete,
     required TResult orElse(),
   }) {

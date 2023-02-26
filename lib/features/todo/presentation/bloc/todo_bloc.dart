@@ -16,7 +16,7 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
         oldList = (state as TodoStateLoaded).todoList;
       }
       // ** NEW VALUE FROM UI
-      String newItem = event.item;
+      TodoModel newItem = event.item;
 
       // * EMITING LOADING
       emit(const TodoState.loading());
@@ -25,7 +25,7 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
       await Future.delayed(const Duration(seconds: 2), () {
         // *** UPDATING OLD LIST WITH NEW ITEM
         // [TodoModel( id:1 title:"Aayurt",subtitle:"Shrestha",id: 1, title: "Ruhi", subtitle: "Maharjan"),TodoModel(id: 2, title: "Ruja", subtitle: "Maharjan"),]
-        oldList = [TodoModel(id: 1, title: newItem), ...oldList];
+        oldList = [newItem, ...oldList];
         // SENDING UPDATE DATA AS LOADED
         emit(TodoState.loaded(todoList: oldList));
       });

@@ -4,6 +4,8 @@ import 'package:monastery_app/features/counter/presentation/bloc/counter_bloc.da
 import 'package:monastery_app/features/counter/presentation/pages/counter_page.dart';
 import 'package:monastery_app/features/todo/presentation/pages/todo_page.dart';
 
+import 'features/chat/presentation/bloc/chat_bloc.dart';
+import 'features/chat/presentation/pages/chat_page.dart';
 import 'features/todo/presentation/bloc/todo_bloc.dart';
 
 void main() {
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -29,8 +32,11 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) => TodoBloc(),
           ),
+           BlocProvider(
+            create: (context) => ChatBloc(),
+          ),
         ],
-        child: const TodoPage(),
+        child: const ChatPage(),
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:monastery_app/features/login/presentation/widgets/custom_cards/custom_text_field.dart';
 
 import '../../../../core/widgets/custom_card/custom_card.dart';
+import '../../../../core/widgets/custom_textfield/custom_textfield.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

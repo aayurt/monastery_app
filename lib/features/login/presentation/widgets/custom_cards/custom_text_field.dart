@@ -20,15 +20,11 @@ class _CustomTextFieldState extends State<CustomTextField> {
       children: [
         Text(widget.title),
         Container(
-          
           child: TextField(
-          
             decoration: InputDecoration(
-
               hintText: widget.hintText,
             ),
           ),
-          
         ),
       ],
     );

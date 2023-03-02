@@ -16,26 +16,26 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Column(
         children: [
-          const Text('ABC Banking'),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: SizedBox(
-              height: 300,
-              width: 500,
-              child: CustomCard(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text('Login'),
-                      CustomTextField(
-                          title: 'Account email',
-                          hintText: 'Enter account email here'),
-                      CustomTextField(
-                          title: 'Password', hintText: 'Enter password here'),
-                    ],
-                  ),
+          const Text(
+            'ABC Banking',
+            style: TextStyle(fontSize: 20),
+          ),
+          SizedBox(
+            height: 300,
+            width: 500,
+            child: CustomCard(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text('Login'),
+                    CustomTextField(
+                        title: 'Account email',
+                        hintText: 'Enter account email here'),
+                    CustomTextField(
+                        title: 'Password', hintText: 'Enter password here'),
+                  ],
                 ),
               ),
             ),

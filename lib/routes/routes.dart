@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:monastery_app/features/chat/presentation/pages/chat_page.dart';
 import 'package:monastery_app/features/login/presentation/pages/login_page.dart';
+import 'package:monastery_app/features/register/presentation/pages/register_page.dart';
 import 'package:monastery_app/features/todo/presentation/pages/todo_page.dart';
 import 'package:monastery_app/routes/routes_constants.dart';
 
@@ -25,6 +26,10 @@ class AppRoutes {
       GoRoute(
         path: RouteConstants.login,
         builder: (context, state) => const LoginPage(),
+      ),
+      GoRoute(
+        path: RouteConstants.register,
+        builder: (context, state) => const RegisterPage(),
       ),
     ],
   );

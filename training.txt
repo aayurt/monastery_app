@@ -1,0 +1,39 @@
+what is widget? 
+- part of UI where we can do UI/UX
+what is argument and parameter?
+- argument is type or structure that is used by function, widget, model to define its structure
+- parameter is something that we pass to function, widget or model. they must be pre-defined eg: we cannot send body in container because we have
+not defined argument for container.
+
+local state?
+is a dynamic variable stored in memory when changed rerenders the widget
+
+global state / bloc state?
+same as local state but can be accessed by other widgets also when defined in parent
+
+what is model?
+set of arguments defined to make a structure 
+
+what is map?
+to seperate a group of type(box of chocolates) into individual type(single chocolate). 
+Can be used to define a new group of type by returning it. eg ['ruja', 'mhrzn'].map((e) => Text(e) ).toList()
+Here List <String> ['ruja', 'mhrzn'] is converted to list of widget  List<Widget> [Text('Ruja'), Text('mhrzn')]
+
+what is list?
+collection of more than one data of same type
+
+what is toList?
+converts to list if possible from another type
+
+
+what is ...?
+spread operator that is used to spread a list into individual type
+
+what is context?
+value passed from parent to child widget and child is able to access the data from parent
+
+
+
+
+
+

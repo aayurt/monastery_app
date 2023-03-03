@@ -3,4 +3,5 @@ class RouteConstants {
   static String todo = "/todo";
   static String counter = "/counter";
   static String login = "/login";
+  static String register = "/register";
 }

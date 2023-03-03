@@ -8,7 +8,11 @@ class CustomTextField extends StatefulWidget {
   final TextEditingController? controller;
 
   const CustomTextField(
-      {Key? key, required this.title, this.hintText, this.errorText,  this.controller})
+      {Key? key,
+      required this.title,
+      this.hintText,
+      this.errorText,
+      this.controller})
       : super(key: key);
 
   @override
@@ -16,24 +20,25 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const SizedBox(height: 16),
         Text(widget.title),
+        const SizedBox(height: 8),
         TextField(
           controller: widget.controller,
           decoration: InputDecoration(
             filled: true,
             isDense: true,
             hintText: widget.hintText,
-            hintStyle: TextStyle(fontSize: 14),
+            hintStyle: const TextStyle(fontSize: 14),
             errorText: widget.errorText,
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.0),
-                borderSide: BorderSide(color: Colors.grey, width: 0.5)),
+                borderSide: const BorderSide(color: Colors.grey, width: 0.5)),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.0),
                 borderSide: BorderSide(color: Colors.blue, width: 0.5)),

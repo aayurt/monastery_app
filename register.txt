@@ -1,0 +1,13 @@
+ToDO
+1. create a register feature
+2. register page widget    
+3. goroute 
+4. register button on click --> register page
+5. bloc
+- state, events, bloc onevent then emit
+- Ui on pressed, events send to bloc
+- bloc processes the data and emit state to UI, display data on UI 
+    - create model for register user 
+    - send data from UI to Bloc with the help of model
+    - then emit the loaded state with string value like 'my name is $.. i am from $..'
+    

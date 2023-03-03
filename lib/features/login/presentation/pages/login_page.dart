@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:monastery_app/features/login/presentation/bloc/login_bloc.dart';
 
 import '../../../../core/widgets/custom_card/custom_card.dart';
 import '../../../../core/widgets/custom_textfield/custom_textfield.dart';
+import '../../data/models/login_model.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -11,6 +14,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,13 +34,42 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text('Login'),
                     CustomTextField(
+                        controller: emailController,
                         title: 'Account email',
                         hintText: 'Enter account email here'),
                     CustomTextField(
-                        title: 'Password', hintText: 'Enter password here'),
+                        controller: passwordController,
+                        title: 'Password',
+                        hintText: 'Enter password here'),
+                    TextButton(
+                        onPressed: () {
+                          context.read<LoginBloc>().add(LoginEvent.onLogin(
+                              loginData: LoginModel(
+                                  email: emailController.text,
+                                  password: passwordController.text)));
+                        },
+                        child: Text('Login')),
+                    BlocBuilder<LoginBloc, LoginState>(
+                      builder: (context, state) {
+                        return state.when(initial: () {
+                          return SizedBox();
+                        }, loading: () {
+                          return CircularProgressIndicator();
+                        }, error: () {
+                          return Text('Error');
+                        }, loaded: (loadedState) {
+                          return Column(
+                            children: [
+                              Text('${loadedState.email}'),
+                              Text('${loadedState.password}'),
+                            ],
+                          );
+                        });
+                      },
+                    ),
                   ],
                 ),
               ),

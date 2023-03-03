@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:monastery_app/features/counter/presentation/bloc/counter_bloc.dart';
+import 'package:monastery_app/features/login/presentation/bloc/login_bloc.dart';
 import 'package:monastery_app/routes/routes.dart';
 
 import 'features/chat/presentation/bloc/chat_bloc.dart';
@@ -28,6 +29,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ChatBloc(),
+        ),
+        BlocProvider(
+          create: (context) => LoginBloc(),
         ),
       ],
       child: MaterialApp.router(

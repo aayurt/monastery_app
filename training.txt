@@ -32,7 +32,8 @@ spread operator that is used to spread a list into individual type
 what is context?
 value passed from parent to child widget and child is able to access the data from parent
 
-
+what is pubspec.yaml?
+static file that consists of list of packages or dependencies. here we define apps name, assets, fonts, themes. we also define apps, version.
 
 
 

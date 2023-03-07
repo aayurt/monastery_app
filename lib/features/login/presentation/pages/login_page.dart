@@ -50,13 +50,14 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         TextButton(
                             onPressed: () {
-                              context.read<LoginBloc>().add(LoginEvent.onLogin(
-                                  loginData: LoginModel(
-                                      email: emailController.text,
-                                      password: passwordController.text)));
+                              context.go(RouteConstants.dashboard);
+                              // context.read<LoginBloc>().add(LoginEvent.onLogin(
+                              //     loginData: LoginModel(
+                              //         email: emailController.text,
+                              //         password: passwordController.text)));
                             },
                             child: Text('Login')),
-                              TextButton(
+                        TextButton(
                             onPressed: () {
                               context.go(RouteConstants.register);
                             },
@@ -81,7 +82,6 @@ class _LoginPageState extends State<LoginPage> {
                         });
                       },
                     ),
-                  
                   ],
                 ),
               ),
